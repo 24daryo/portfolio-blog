@@ -67,7 +67,7 @@ _キャプション_
 
 # 画像
 
-![](/posts/ff7_cloud.jpg)
+![](images/posts/ff7_cloud.jpg)
 
 # 動画
 

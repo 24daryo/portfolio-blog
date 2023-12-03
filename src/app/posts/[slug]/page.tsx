@@ -12,7 +12,12 @@ const POST_PATH = "_posts";
 export const generateStaticParams = () => {
   // ファイルの中身を取得
   const postsDirectory = path.join(process.cwd(), POST_PATH);
-  const fileNames = fs.readdirSync(postsDirectory);
+  let fileNames = fs.readdirSync(postsDirectory);
+
+  // mdがついているファイル名のみに抽出
+  fileNames = fileNames.filter((fileName) => {
+    return /\.md$/.test(fileName);
+  });
 
   // fileNamesからslugを取得
   return fileNames.map((fileName) => {
