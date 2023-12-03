@@ -36,9 +36,11 @@ export default async function Post({ params }: any) {
     embedOrigin: "https://embed.zenn.studio",
   });
 
+  const contentWithNextImage = contentHTML.replace(/<img/g, "<Image").replace(/\/>/g, "/>");
+
   return (
     <article className="znc">
-      <div className="znc mt-10" dangerouslySetInnerHTML={{ __html: contentHTML }} />
+      <div className="znc mt-10" dangerouslySetInnerHTML={{ __html: contentWithNextImage }} />
     </article>
   );
 }
