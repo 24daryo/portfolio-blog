@@ -19,6 +19,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       document.head.removeChild(script);
     };
   }, []); // useEffectの第二引数は空の配列であることが一般的です
+
   return (
     <html lang="en" className="h-full bg-gray-100">
       <head></head>
