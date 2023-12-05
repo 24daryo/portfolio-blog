@@ -4,6 +4,8 @@ import matter from "gray-matter";
 import React from "react";
 import Link from "next/link";
 
+import { Cards } from "@/components/test/Card";
+
 const POST_PATH = "_posts";
 
 export default async function RootLayout() {
@@ -20,7 +22,6 @@ export default async function RootLayout() {
       const { data } = matter(fileContents);
 
       // slugとfrontmatter(title, date, description)を取得
-      console.log(fileName);
       return {
         slug: fileName.replace(".md", ""),
         frontmatter: data,
@@ -28,17 +29,22 @@ export default async function RootLayout() {
     })
   );
 
+  const postItems = posts.map((post) => {
+    return {
+      title: post.frontmatter.title,
+      excerpt: post.frontmatter.excerpt,
+      coverImage: post.frontmatter.coverImage,
+      date: post.frontmatter.date,
+      category: post.frontmatter.category,
+      tags: post.frontmatter.tags,
+      href: `/posts/${post.slug}`,
+    };
+  });
+
   return (
     <div>
       <h1>ブログ一覧</h1>
-
-      <ul>
-        {posts.map((post) => (
-          <li key={post.slug}>
-            <Link href={`posts/${post.slug}`}>{post.frontmatter.title}</Link>
-          </li>
-        ))}
-      </ul>
+      <Cards posts={postItems} />
     </div>
   );
 }

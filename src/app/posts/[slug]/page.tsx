@@ -44,8 +44,11 @@ export default async function Post({ params }: any) {
   const contentWithNextImage = contentHTML.replace(/<img/g, "<Image").replace(/\/>/g, "/>");
 
   return (
-    <article className="znc">
-      <div className="znc mt-10" dangerouslySetInnerHTML={{ __html: contentWithNextImage }} />
-    </article>
+    <>
+      <h1 className="sm:text-4xl text-3xl font-medium title-font mb-4 text-gray-800">{data.title}</h1>
+      <article className="znc">
+        <div className="znc mt-10" dangerouslySetInnerHTML={{ __html: contentWithNextImage }} />
+      </article>
+    </>
   );
 }
