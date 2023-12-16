@@ -1,7 +1,7 @@
 ---
 title: "マークダウン記法一覧"
 excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus."
-coverImage: "/images/posts/ff7_cloud.jpg"
+coverImage: "https://dummyimage.com/720x400"
 date: "2020-03-16"
 tags: ["コーディング", "テスト"]
 author:
@@ -72,7 +72,7 @@ _キャプション_
 
 # 動画
 
-https://www.youtube.com/watch?v=WRVsOCh907o
+https://www.youtube.com/watch?v=okGnXYjvJRM
 
 # ツイッター
 

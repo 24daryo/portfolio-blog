@@ -2,7 +2,6 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import React from "react";
-import Link from "next/link";
 
 import { Cards } from "@/components/test/Card";
 
@@ -42,7 +41,7 @@ export default async function RootLayout() {
   });
 
   return (
-    <div>
+    <div className="">
       <h1>ブログ一覧</h1>
       <Cards posts={postItems} />
     </div>
